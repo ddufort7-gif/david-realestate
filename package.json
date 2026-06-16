@@ -1,0 +1,11 @@
+{
+  "name": "david-dufort-realestate",
+  "version": "1.0.0",
+  "description": "David Dufort San Diego Real Estate - lead capture site",
+  "scripts": {
+    "start": "serve -s . -l ${PORT:-3000}"
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+}

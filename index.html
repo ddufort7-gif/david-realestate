@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>David Dufort · San Diego Real Estate · La Jolla</title>
+<meta name="description" content="David Dufort, San Diego Realtor in La Jolla. Find out what your home is worth, or let's find you where you belong. DRE #02133222, eXp Realty." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+  --ink:#0d1b24;          /* deep ocean night */
+  --ink2:#13252f;
+  --sand:#f3ede1;         /* warm pale sand */
+  --paper:#faf6ee;
+  --gold:#c08a3e;         /* sunset brass */
+  --gold-lt:#d9a85a;
+  --sea:#2c5f6e;          /* muted sea-teal, used sparingly */
+  --text:#2a3640;
+  --muted:#6b7780;
+  --line:rgba(13,27,36,0.12);
+}
+
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  color:var(--text);
+  background:var(--paper);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 1.6rem;}
+
+/* ── top bar ── */
+header{
+  position:absolute;top:0;left:0;right:0;z-index:20;
+}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 1.6rem;max-width:1180px;margin:0 auto;}
+.brand{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:600;letter-spacing:.01em;color:#fff;text-decoration:none;}
+.brand span{color:var(--gold-lt);}
+.nav-right{display:flex;align-items:center;gap:1.8rem;}
+.nav-right a{color:rgba(255,255,255,.82);text-decoration:none;font-size:.82rem;letter-spacing:.04em;font-weight:500;transition:color .2s;}
+.nav-right a:hover{color:#fff;}
+.nav-call{border:1px solid rgba(255,255,255,.35);padding:.5rem 1rem;border-radius:2px;}
+.nav-call:hover{background:rgba(255,255,255,.1);}
+@media(max-width:720px){.nav-links{display:none;}}
+
+/* ── HERO ── */
+.hero{
+  position:relative;min-height:100vh;display:flex;align-items:center;
+  color:#fff;overflow:hidden;
+}
+.hero-bg{position:absolute;inset:0;z-index:0;
+  background:
+    linear-gradient(180deg,rgba(8,18,26,.72) 0%,rgba(8,18,26,.55) 45%,rgba(8,18,26,.85) 100%),
+    url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80') center 40%/cover no-repeat;
+}
+.hero-inner{position:relative;z-index:1;width:100%;max-width:1180px;margin:0 auto;padding:7rem 1.6rem 3rem;}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;}
+@media(max-width:880px){.hero-grid{grid-template-columns:1fr;gap:2rem;}}
+
+.eyebrow{font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;margin-bottom:1.3rem;}
+.hero h1{
+  font-family:'Fraunces',serif;font-weight:500;
+  font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.04;letter-spacing:-.01em;
+  margin-bottom:1.3rem;
+}
+.hero h1 em{font-style:italic;color:var(--gold-lt);}
+.hero-sub{font-size:1.1rem;font-weight:300;color:rgba(255,255,255,.86);max-width:30ch;margin-bottom:.4rem;}
+
+/* ── valuation card (the signature) ── */
+.val-card{
+  background:rgba(250,246,238,.97);color:var(--text);
+  border-radius:6px;padding:2rem 1.9rem;
+  box-shadow:0 30px 70px rgba(0,0,0,.45);
+}
+.val-card .vc-ey{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:.5rem;}
+.val-card h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.5rem;line-height:1.15;margin-bottom:.5rem;color:var(--ink);}
+.val-card .vc-story{font-size:.92rem;color:var(--muted);font-style:italic;margin-bottom:1.3rem;line-height:1.5;}
+.field{margin-bottom:.8rem;}
+.field label{display:block;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.3rem;}
+.field input{
+  width:100%;padding:.8rem .9rem;border:1px solid var(--line);border-radius:4px;
+  font-family:inherit;font-size:1rem;color:var(--text);background:#fff;transition:border-color .2s;
+}
+.field input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(192,138,62,.12);}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;}
+.btn-primary{
+  width:100%;margin-top:.5rem;padding:.95rem;border:none;border-radius:4px;cursor:pointer;
+  background:var(--gold);color:#fff;font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;transition:background .2s,transform .1s;
+}
+.btn-primary:hover{background:#a9762f;}
+.btn-primary:active{transform:translateY(1px);}
+.vc-fine{font-size:.72rem;color:var(--muted);margin-top:.8rem;text-align:center;}
+
+/* ── section base ── */
+section{padding:5.5rem 0;}
+.sec-eyebrow{font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:1rem;}
+.sec-title{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.1;color:var(--ink);letter-spacing:-.01em;margin-bottom:1.2rem;}
+.sec-lead{font-size:1.1rem;color:var(--text);font-weight:300;max-width:52ch;}
+
+/* ── relocation (fold two) ── */
+.reloc{background:var(--ink);color:#fff;position:relative;overflow:hidden;}
+.reloc .sec-eyebrow{color:var(--gold-lt);}
+.reloc .sec-title{color:#fff;}
+.reloc-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;}
+@media(max-width:880px){.reloc-grid{grid-template-columns:1fr;gap:2.2rem;}}
+.reloc p{color:rgba(255,255,255,.82);font-weight:300;font-size:1.06rem;margin-bottom:1.5rem;max-width:46ch;}
+.reloc-img{border-radius:6px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.4);aspect-ratio:4/3;}
+.reloc-img img{width:100%;height:100%;object-fit:cover;}
+.reloc-form{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.5rem;}
+.reloc-form input{
+  flex:1;min-width:160px;padding:.8rem .9rem;border:1px solid rgba(255,255,255,.22);border-radius:4px;
+  background:rgba(255,255,255,.06);color:#fff;font-family:inherit;font-size:.95rem;
+}
+.reloc-form input::placeholder{color:rgba(255,255,255,.5);}
+.reloc-form input:focus{outline:none;border-color:var(--gold-lt);}
+.reloc-form button{
+  padding:.8rem 1.5rem;border:none;border-radius:4px;background:var(--gold);color:#fff;
+  font-weight:600;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:background .2s;
+}
+.reloc-form button:hover{background:#a9762f;}
+
+/* ── homes showcase ── */
+.homes-head{text-align:center;max-width:60ch;margin:0 auto 3rem;}
+.homes-head .sec-lead{margin:0 auto;}
+.homes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+@media(max-width:880px){.homes-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.homes-grid{grid-template-columns:1fr;}}
+.home-card{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 10px 30px rgba(13,27,36,.12);}
+.home-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+.home-card:hover img{transform:scale(1.05);}
+.home-card .hc-tag{position:absolute;left:0;right:0;bottom:0;padding:1.4rem 1.2rem .9rem;
+  background:linear-gradient(transparent,rgba(8,18,26,.85));color:#fff;}
+.home-card .hc-area{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:500;}
+.home-card .hc-sub{font-size:.8rem;color:rgba(255,255,255,.8);letter-spacing:.03em;}
+
+/* ── about (fold) ── */
+.about{background:var(--sand);}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:3.5rem;align-items:center;}
+@media(max-width:880px){.about-grid{grid-template-columns:1fr;gap:2rem;}}
+.about-photo{border-radius:6px;overflow:hidden;box-shadow:0 20px 50px rgba(13,27,36,.22);aspect-ratio:4/5;max-width:380px;}
+.about-photo img{width:100%;height:100%;object-fit:cover;}
+.about h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.8rem,3.4vw,2.5rem);color:var(--ink);line-height:1.12;margin-bottom:1.2rem;letter-spacing:-.01em;}
+.about p{font-size:1.06rem;color:var(--text);font-weight:300;margin-bottom:1.1rem;max-width:50ch;}
+.about .credline{font-size:.82rem;color:var(--muted);letter-spacing:.04em;margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--line);}
+
+/* ── proof (testimonials) ── */
+.proof{text-align:center;}
+.proof .sec-eyebrow{text-align:center;}
+.proof-title{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.9rem,3.4vw,2.5rem);color:var(--ink);margin-bottom:3rem;}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;text-align:left;}
+@media(max-width:880px){.tgrid{grid-template-columns:1fr;max-width:520px;margin:0 auto;}}
+.tcard{background:#fff;border:1px solid var(--line);border-radius:6px;padding:1.8rem;display:flex;flex-direction:column;}
+.tcard .quote{font-family:'Fraunces',serif;font-size:1.05rem;line-height:1.5;color:var(--ink);font-style:italic;margin-bottom:1.2rem;flex:1;}
+.tcard .who{font-size:.85rem;font-weight:600;color:var(--text);}
+.tcard .role{font-size:.76rem;color:var(--gold);letter-spacing:.04em;text-transform:uppercase;margin-top:.15rem;}
+
+/* ── final CTA ── */
+.final{background:var(--ink);color:#fff;text-align:center;}
+.final h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(2rem,4vw,3rem);line-height:1.1;margin-bottom:1rem;letter-spacing:-.01em;}
+.final h2 em{font-style:italic;color:var(--gold-lt);}
+.final p{color:rgba(255,255,255,.8);font-weight:300;font-size:1.1rem;margin-bottom:2rem;}
+.final-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-ghost{display:inline-block;padding:.95rem 2rem;border:1px solid var(--gold-lt);border-radius:4px;
+  color:#fff;text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:all .2s;}
+.btn-ghost:hover{background:var(--gold);border-color:var(--gold);}
+.btn-solid{display:inline-block;padding:.95rem 2rem;background:var(--gold);border:1px solid var(--gold);border-radius:4px;
+  color:#fff;text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:all .2s;}
+.btn-solid:hover{background:#a9762f;border-color:#a9762f;}
+
+/* ── footer ── */
+footer{background:var(--ink2);color:rgba(255,255,255,.7);padding:3rem 0 2rem;font-size:.85rem;}
+.foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;align-items:flex-start;}
+.foot-brand{font-family:'Fraunces',serif;font-size:1.2rem;color:#fff;margin-bottom:.4rem;}
+.foot-brand span{color:var(--gold-lt);}
+.foot-col a{color:rgba(255,255,255,.7);text-decoration:none;display:block;margin-bottom:.35rem;transition:color .2s;}
+.foot-col a:hover{color:#fff;}
+.foot-legal{margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.12);font-size:.76rem;color:rgba(255,255,255,.5);line-height:1.7;}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:1.5rem;
+  background:rgba(8,18,26,.7);backdrop-filter:blur(4px);}
+.modal.show{display:flex;}
+.modal-card{background:var(--paper);border-radius:8px;max-width:440px;width:100%;padding:2.4rem 2rem;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.5);}
+.modal-card h3{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--ink);margin-bottom:.7rem;}
+.modal-card p{color:var(--text);font-weight:300;margin-bottom:1.5rem;}
+.modal-card .mc-call{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--gold);font-weight:600;}
+.modal-card button{margin-top:1.4rem;padding:.7rem 1.6rem;background:var(--ink);color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;}
+
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+  <nav class="nav">
+    <a class="brand" href="#top">David Dufort<span>.</span></a>
+    <div class="nav-right">
+      <a class="nav-links" href="#relocation">Relocating</a>
+      <a class="nav-links" href="#homes">San Diego</a>
+      <a class="nav-links" href="#about">About</a>
+      <a class="nav-call" href="tel:+16198882661">Call David</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO + VALUATION (fold one: the capture) -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">San Diego · La Jolla Coast</div>
+        <h1>What is your San Diego home worth <em>right now?</em></h1>
+        <p class="hero-sub">Real numbers from someone who knows this coastline — not a robot's guess.</p>
+      </div>
+
+      <div class="val-card" id="value">
+        <div class="vc-ey">Free Home Valuation</div>
+        <h2>Find your home's true value.</h2>
+        <p class="vc-story">You've built something here. Let's make sure the next chapter is funded well.</p>
+        <form id="val-form">
+          <div class="field">
+            <label for="addr">Property address</label>
+            <input id="addr" name="Property Address" type="text" placeholder="848 Prospect St, La Jolla" required />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="vname">Your name</label>
+              <input id="vname" name="Name" type="text" placeholder="Name" required />
+            </div>
+            <div class="field">
+              <label for="vphone">Phone</label>
+              <input id="vphone" name="Phone" type="tel" placeholder="Phone" required />
+            </div>
+          </div>
+          <div class="field">
+            <label for="vemail">Email</label>
+            <input id="vemail" name="Email" type="email" placeholder="you@email.com" required />
+          </div>
+          <input type="hidden" name="_subject" value="New HOME VALUATION lead from website" />
+          <input type="hidden" name="Lead Type" value="Home Valuation" />
+          <button class="btn-primary" type="submit">Get My Home's Value</button>
+          <p class="vc-fine">No obligation. Your information stays private.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELOCATION (fold two: differentiation) -->
+<section class="reloc" id="relocation">
+  <div class="wrap">
+    <div class="reloc-grid">
+      <div>
+        <div class="sec-eyebrow">San Diego Relocation Specialist</div>
+        <h2 class="sec-title">Moving to San Diego? We don't just find you a house.<br>We find you where you belong.</h2>
+        <p>Military, biotech, academic, or a fresh start — arriving in a new city is more than a transaction. I know these neighborhoods block by block: where the light is right, where families settle in, where you'll feel at home from the first morning.</p>
+        <form class="reloc-form" id="reloc-form">
+          <input name="Name" type="text" placeholder="Your name" required />
+          <input name="Email" type="email" placeholder="Email" required />
+          <input name="Timeline" type="text" placeholder="Your timeline (e.g. 60 days)" />
+          <input type="hidden" name="_subject" value="New RELOCATION lead from website" />
+          <input type="hidden" name="Lead Type" value="Relocation" />
+          <button type="submit">Book a 15-min call</button>
+        </form>
+      </div>
+      <div class="reloc-img">
+        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80" alt="San Diego coastal home" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOMES SHOWCASE -->
+<section id="homes">
+  <div class="wrap">
+    <div class="homes-head">
+      <div class="sec-eyebrow" style="text-align:center;">The Neighborhoods I Serve</div>
+      <h2 class="sec-title" style="text-align:center;">From the cliffs of La Jolla to the bay.</h2>
+      <p class="sec-lead">A coastline of distinct communities — each with its own character, its own value, its own way of living well.</p>
+    </div>
+    <div class="homes-grid">
+      <div class="home-card">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80" alt="La Jolla home" loading="lazy" />
+        <div class="hc-tag"><div class="hc-area">La Jolla</div><div class="hc-sub">Coastal luxury · 92037</div></div>
+      </div>
+      <div class="home-card">
+        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=900&q=80" alt="Pacific Beach home" loading="lazy" />
+        <div class="hc-tag"><div class="hc-area">Pacific Beach</div><div class="hc-sub">Beach living · 92109</div></div>
+      </div>
+      <div class="home-card">
+        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=900&q=80" alt="Point Loma home" loading="lazy" />
+        <div class="hc-tag"><div class="hc-area">Point Loma</div><div class="hc-sub">Bayfront views · 92106</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT (a fold, not a page) -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="david_headshot.jpg" alt="David Dufort, Realtor" id="headshot" loading="lazy" />
+      </div>
+      <div>
+        <div class="sec-eyebrow">The Agent</div>
+        <h2>I sell the homes other agents couldn't.</h2>
+        <p>I've closed over $6 million in San Diego real estate and built my reputation on the listings most agents walk away from — the expired, the for-sale-by-owner, the ones that needed someone who'd actually do the work.</p>
+        <p>A home is rarely just a transaction. It's equity you earned, a chapter you're closing, a future you're funding. I treat it that way — with the directness of a closer and the care it deserves.</p>
+        <p class="credline">David Dufort · Realtor · eXp Realty · DRE #02133222 · 848 Prospect St, La Jolla, CA 92037</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof">
+  <div class="wrap">
+    <div class="sec-eyebrow" style="text-align:center;">In Their Words</div>
+    <h2 class="proof-title">Three stories. Real outcomes.</h2>
+    <div class="tgrid">
+      <div class="tcard">
+        <div class="quote">"Two agents failed to sell our house. David had it in escrow in five weeks — and got us more than the last listing price."</div>
+        <div class="who">Former Expired Listing</div>
+        <div class="role">Seller · La Jolla</div>
+      </div>
+      <div class="tcard">
+        <div class="quote">"We were relocating from out of state and knew nothing. David didn't just find a house — he found us the right neighborhood for our kids."</div>
+        <div class="who">Relocation Family</div>
+        <div class="role">Buyer · Point Loma</div>
+      </div>
+      <div class="tcard">
+        <div class="quote">"Straightforward, no games, and he fought for our number. Exactly who you want on your side of the table."</div>
+        <div class="who">Repeat Client</div>
+        <div class="role">Seller · Pacific Beach</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <h2>San Diego. Whether you're <em>arriving</em> or <em>leaving</em> —<br>let's talk.</h2>
+    <p>One conversation. No pressure. Just real answers about your home and your options.</p>
+    <div class="final-actions">
+      <a class="btn-solid" href="#value">Value My Home</a>
+      <a class="btn-ghost" href="#relocation">I'm Relocating</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">David Dufort<span>.</span></div>
+        <div>San Diego Real Estate · La Jolla</div>
+      </div>
+      <div class="foot-col">
+        <a href="#value">Home Valuation</a>
+        <a href="#relocation">Relocating to SD</a>
+        <a href="#homes">Neighborhoods</a>
+        <a href="#about">About David</a>
+      </div>
+      <div class="foot-col">
+        <a href="tel:+16198882661">Call / Text · (619) 888-2661</a>
+        <a href="mailto:david.dufort@exprealty.com">Email David</a>
+        <div style="margin-top:.5rem;">848 Prospect St<br>La Jolla, CA 92037</div>
+      </div>
+    </div>
+    <div class="foot-legal">
+      David Dufort, Realtor · DRE #02133222 · eXp Realty of California, Inc. · 848 Prospect St, La Jolla, CA 92037.
+      All information deemed reliable but not guaranteed. Equal Housing Opportunity. If you have a brokerage relationship with another agency, this is not intended as a solicitation.
+    </div>
+  </div>
+</footer>
+
+<!-- lead modal -->
+<div class="modal" id="modal">
+  <div class="modal-card">
+    <h3>Thank you.</h3>
+    <p>Your request is in. David personally reviews every inquiry and will reach out shortly with real numbers — not an automated estimate.</p>
+    <p class="mc-call">Need it sooner? Call David directly.</p>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+function showModal(){document.getElementById('modal').classList.add('show');}
+function closeModal(){document.getElementById('modal').classList.remove('show');}
+var FORMSPREE = "https://formspree.io/f/mojzyowv";
+async function sendLead(form){
+  try{
+    const data = new FormData(form);
+    const res = await fetch(FORMSPREE, {
+      method:'POST', body:data, headers:{'Accept':'application/json'}
+    });
+    if(res.ok){ showModal(); form.reset(); }
+    else { alert('Something went wrong sending your request. Please call David at (619) 888-2661.'); }
+  }catch(err){
+    alert('Could not send right now. Please call David at (619) 888-2661.');
+  }
+}
+document.getElementById('val-form').addEventListener('submit',function(e){
+  e.preventDefault(); sendLead(this);
+});
+document.getElementById('reloc-form').addEventListener('submit',function(e){
+  e.preventDefault(); sendLead(this);
+});
+document.getElementById('modal').addEventListener('click',function(e){
+  if(e.target===this) closeModal();
+});
+</script>
+</body>
+</html>
