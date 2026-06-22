@@ -42,7 +42,9 @@ header{
 }
 .nav{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 1.6rem;max-width:1180px;margin:0 auto;}
 .brand{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:600;letter-spacing:.01em;color:#fff;text-decoration:none;display:inline-flex;flex-direction:column;gap:.45rem;line-height:1;}
-.brand img{height:30px;width:auto;background:#fff;padding:5px 9px;border-radius:5px;box-shadow:0 1px 4px rgba(0,0,0,.25);}
+.brand img{height:28px;width:auto;}
+.brand-cred{font-family:-apple-system,'Segoe UI',Roboto,sans-serif;font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.68);line-height:1.7;font-weight:500;}
+.brand-cred a{color:rgba(255,255,255,.68);text-decoration:none;}
 .brand span{color:var(--gold-lt);}
 .nav-right{display:flex;align-items:center;gap:1.8rem;}
 .nav-right a{color:rgba(255,255,255,.82);text-decoration:none;font-size:.82rem;letter-spacing:.04em;font-weight:500;transition:color .2s;}
@@ -204,7 +206,11 @@ footer{background:var(--ink2);color:rgba(255,255,255,.7);padding:3rem 0 2rem;fon
 <!-- NAV -->
 <header>
   <nav class="nav">
-    <a class="brand" href="#top"><span class="brand-name">David Dufort<span>.</span></span><img src="exp.png" alt="eXp Realty" /></a>
+    <div class="brand">
+      <a class="brand-name" href="#top" style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:600;color:#fff;text-decoration:none;">David Dufort<span style="color:var(--gold-lt);">.</span></a>
+      <div class="brand-cred">848 Prospect St, La Jolla<br>(619) 888-2661 &nbsp;·&nbsp; DRE #02133222</div>
+      <img src="exp.png" alt="eXp Realty" />
+    </div>
     <div class="nav-right">
       <a class="nav-links" href="#relocation">Relocating</a>
       <a class="nav-links" href="https://sdar.stats.10kresearch.com/reports" target="_blank" rel="noopener">Market Stats</a>
