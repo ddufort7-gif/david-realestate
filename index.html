@@ -40,7 +40,11 @@ img{max-width:100%;display:block;}
 header{
   position:absolute;top:0;left:0;right:0;z-index:20;
 }
-.nav{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 1.6rem;max-width:1180px;margin:0 auto;}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:1.5rem 1.6rem;max-width:1180px;margin:0 auto;position:relative;}
+.nav-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);}
+.nav-statbtn{font-size:.72rem!important;padding:.62rem 1.15rem!important;}
+.hero-statbtn{display:none;}
+@media(max-width:880px){.nav-center{display:none;}.hero-statbtn{display:block!important;}}
 .brand{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:600;letter-spacing:.01em;color:#fff;text-decoration:none;display:inline-flex;flex-direction:column;gap:.45rem;line-height:1;}
 .brand img{height:28px;width:auto;}
 .brand-cred{font-family:-apple-system,'Segoe UI',Roboto,sans-serif;font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.68);line-height:1.7;font-weight:500;}
@@ -118,6 +122,8 @@ section{padding:5.5rem 0;}
 .reloc-img{border-radius:6px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.4);aspect-ratio:4/3;}
 .reloc-img img{width:100%;height:100%;object-fit:cover;}
 .reloc-form{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.5rem;}
+.homes-badge{display:inline-block;margin:.2rem 0 1.3rem;padding:.5rem .95rem;border:1px solid rgba(255,255,255,.28);border-radius:4px;color:rgba(255,255,255,.85);text-decoration:none;font-size:.74rem;letter-spacing:.04em;font-weight:500;transition:all .2s;}
+.homes-badge:hover{border-color:var(--gold-lt);color:#fff;background:rgba(255,255,255,.05);}
 .reloc-form input{
   flex:1;min-width:160px;padding:.8rem .9rem;border:1px solid rgba(255,255,255,.22);border-radius:4px;
   background:rgba(255,255,255,.06);color:#fff;font-family:inherit;font-size:.95rem;
@@ -211,6 +217,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.7);padding:3rem 0 2rem;fon
       <div class="brand-cred">848 Prospect St, La Jolla<br>(619) 888-2661 &nbsp;·&nbsp; DRE #02133222</div>
       <img src="exp.png" alt="eXp Realty" />
     </div>
+    <div class="nav-center">
+      <a class="btn-solid nav-statbtn" href="https://sdar.stats.10kresearch.com/reports" target="_blank" rel="noopener">View San Diego Market Stats</a>
+    </div>
     <div class="nav-right">
       <a class="nav-links" href="#relocation">Relocating</a>
       <a class="nav-links" href="https://sdar.stats.10kresearch.com/reports" target="_blank" rel="noopener">Market Stats</a>
@@ -224,7 +233,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.7);padding:3rem 0 2rem;fon
 <section class="hero" id="top">
   <div class="hero-bg"></div>
   <div class="hero-inner">
-    <div style="text-align:center;margin:0 auto 2.4rem;">
+    <div class="hero-statbtn" style="text-align:center;margin:0 auto 2.4rem;">
       <a class="btn-solid" href="https://sdar.stats.10kresearch.com/reports" target="_blank" rel="noopener">View San Diego Market Stats</a>
     </div>
     <div class="hero-grid">
@@ -273,8 +282,9 @@ footer{background:var(--ink2);color:rgba(255,255,255,.7);padding:3rem 0 2rem;fon
     <div class="reloc-grid">
       <div>
         <div class="sec-eyebrow">San Diego Relocation Specialist</div>
-        <h2 class="sec-title">Moving to San Diego? We don't just find you a house.<br>We find you where you belong.</h2>
-        <p>Military, biotech, academic, or a fresh start — arriving in a new city is more than a transaction. I know these neighborhoods block by block: where the light is right, where families settle in, where you'll feel at home from the first morning.</p>
+        <h2 class="sec-title">Moving to San Diego? Whether you're arriving or leaving — let's talk.</h2>
+        <p>Buying, selling, or relocating across the country — you're covered end to end. I know San Diego block by block, and I run premium, full-service relocation from the first showing to the day you're unpacked. From point of sale to move-in, we've got you covered.</p>
+        <a class="homes-badge" href="https://www.homes.com/real-estate-agents/david-dufort/2h02h7c/" target="_blank" rel="noopener">★ Verified on Homes.com · 8 closed sales · $5.6M sold</a>
         <form class="reloc-form" id="reloc-form">
           <input name="Name" type="text" placeholder="Your name" required />
           <input name="Email" type="email" placeholder="Email" required />
@@ -361,7 +371,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.7);padding:3rem 0 2rem;fon
 <!-- FINAL CTA -->
 <section class="final">
   <div class="wrap">
-    <h2>San Diego. Whether you're <em>arriving</em> or <em>leaving</em> —<br>let's talk.</h2>
+    <h2>Let's talk about your <em>next move</em>.</h2>
     <p>One conversation. No pressure. Just real answers about your home and your options.</p>
     <div class="final-actions">
       <a class="btn-solid" href="#value">Value My Home</a>
@@ -383,6 +393,7 @@ footer{background:var(--ink2);color:rgba(255,255,255,.7);padding:3rem 0 2rem;fon
         <a href="#relocation">Relocating to SD</a>
         <a href="#homes">Neighborhoods</a>
         <a href="#about">About David</a>
+        <a href="https://www.homes.com/real-estate-agents/david-dufort/2h02h7c/" target="_blank" rel="noopener">My Homes.com Profile</a>
       </div>
       <div class="foot-col">
         <a href="tel:+16198882661">Call / Text · (619) 888-2661</a>
